@@ -9,9 +9,12 @@ import(
 func main(){
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0) // flag to disable printing
-	message, err := greetings.Hello("Jane")
+	
+	names := []string{"Jane", "Andy", "Jady"}
+	
+	messages, err := greetings.Hellos(names)
 	if err != nil{
 		log.Fatal(err)
 	}
-	fmt.Println(message)
+	fmt.Println(messages)
 }
