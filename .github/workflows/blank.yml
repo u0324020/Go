@@ -1,0 +1,21 @@
+name: Lint Go Code
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly
+
+jobs:
+  lint: # Job name
+    runs-on: ubuntu-lastest # Runner System
+    steps:
+      - name: Fetching Local Repository
+        uses: actions/checkout@v2
+      - name: Setup Go environment
+        uses: actions/setup-go@v2.1.3
+        with:
+          go-version: '^1.14.1' # The Go version to download (if necessary) and use.
+      - name: Verify go version
+        run: go version
