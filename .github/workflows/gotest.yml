@@ -9,7 +9,7 @@ on:
 
 jobs:
   lint: # Job name
-    runs-on: ubuntu-lastest # Runner System
+    runs-on: ubuntu-latest # Runner System
     steps:
       - name: Fetching Local Repository
         uses: actions/checkout@v2
